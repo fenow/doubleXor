@@ -4,13 +4,13 @@
 ## ---------------------------------------------------------------------------
 ##
 
-precommit: stan fixer ## Clean code before commit
+precommit: stan fixer tests ## Clean and test code before commit
 
 stan: ## Run PHPStan
 	vendor/bin/phpstan analyse src
 
 tests: ## Run Tests
-	vendor/phpunit/phpunit/phpunit
+	vendor/phpunit/phpunit/phpunit --verbose
 
 fixer: ## Run Php-cs-fixer
 	./bin/php-cs-fixer fix ./src
