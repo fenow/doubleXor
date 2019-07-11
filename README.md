@@ -1,4 +1,4 @@
-# doubleXor
+# doubleXor [![Build Status](https://travis-ci.org/fenow/doubleXor.svg?branch=master)](https://travis-ci.org/fenow/doubleXor)
 
 Let us introduce a new operation called double xor, and use the operator ^^ to denote it. For two integers A and B, A ^^ B is calculated as follows:
 
