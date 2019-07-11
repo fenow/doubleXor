@@ -26,6 +26,8 @@ class DoubleXor implements DoubleXorInterface
     const SINGLE_MODULO = 2;
     const MULTIPLE_MODULO = 10;
 
+    const PREPEND_CHARACTER = 0;
+
     /***
      * @var int $n
      */
@@ -58,7 +60,6 @@ class DoubleXor implements DoubleXorInterface
 
         // While more one element in the list we can make the operation
         while (count($list) > 1) {
-            //echo implode(',', $list) . "\n";
             $a = $list[0];
             $b = $list[1];
 
@@ -139,7 +140,7 @@ class DoubleXor implements DoubleXorInterface
         $bLong = strlen($b);
 
         if ($aLong < $bLong) {
-            $a = str_pad($a, $bLong, '0', STR_PAD_LEFT);
+            $a = str_pad($a, $bLong, self::PREPEND_CHARACTER, STR_PAD_LEFT);
         } elseif ($bLong < $aLong) {
             $b = str_pad($b, $aLong, '0', STR_PAD_LEFT);
         }
@@ -191,6 +192,6 @@ class DoubleXor implements DoubleXorInterface
             $output .= gmp_xor($aList[$i], $bList[$i]) % self::MULTIPLE_MODULO;
         }
 
-        return intval(ltrim($output, 0));
+        return intval(ltrim($output, self::PREPEND_CHARACTER));
     }
 }
