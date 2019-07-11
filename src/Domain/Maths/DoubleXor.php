@@ -142,7 +142,7 @@ class DoubleXor implements DoubleXorInterface
         if ($aLong < $bLong) {
             $a = str_pad($a, $bLong, self::PREPEND_CHARACTER, STR_PAD_LEFT);
         } elseif ($bLong < $aLong) {
-            $b = str_pad($b, $aLong, '0', STR_PAD_LEFT);
+            $b = str_pad($b, $aLong, self::PREPEND_CHARACTER, STR_PAD_LEFT);
         }
 
         return self::getElementType($a);
